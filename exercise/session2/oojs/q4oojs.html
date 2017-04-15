@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+	
+var ctr1=0,ctr2=0;
+
+function countObject()
+{
+
+	if(this instanceof countObject == true){
+
+		ctr1=ctr1+1;
+	}
+
+	else
+		{
+			ctr2++;
+		}
+
+
+}
+
+
+var ob1=new countObject();
+var ob2= new countObject();
+
+var ob3=countObject();
+
+console.log("  Count of number of instances (object created by 'new' ) : " + ctr1);
+
+console.log(" Count of number of invocations  : " + ctr2);
+
+
+
+
+
+
+</script>
+<h3>q4.Create a function which returns number of invocations and number of instances of a function. (check console )</h3>
+</body>
+</html>

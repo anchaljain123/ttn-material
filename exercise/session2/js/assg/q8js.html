@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Capitalize first letter of each word.
+Given string is:
+String s = "here are a bunch of words";
+Output should be:
+Here Are A Bunch Of Words</title>
+
+<script type="text/javascript">
+	
+	function titleCase(str) {
+   var splitStr = str.toLowerCase().split(' ');
+   for (var i = 0; i < splitStr.length; i++) {
+
+       splitStr[i] = splitStr[i].charAt(0).toUpperCase() + splitStr[i].substring(1);     
+   }
+   
+  alert( " String in Titlecase  :  " + splitStr.join(' ')); 
+}
+
+</script>
+</head>
+<body>
+<h4>q8.Capitalize first letter of each word.
+Given string is:
+String s = "here are a bunch of words";
+Output should be:
+Here Are A Bunch Of Words</h4>
+
+Enter String  : <input type="text" placeholder="Your String" id="t1">
+<input type="button" name="" value="submit" onclick="titleCase(document.getElementById('t1').value)">
+
+</body>
+</html>

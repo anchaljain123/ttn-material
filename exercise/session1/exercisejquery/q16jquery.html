@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+
+    <div class="o">hi</div>
+    <div class="p">bye</div>
+
+        <div id="div1">Retrive the data from server using ajax get call</div>
+        <button type="button">Click Me!</button>
+
+    </body>
+</html>
+<script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+<script>
+    $(document).ready(function(){
+
+
+        $('.o').append(".p");
+        $('.o').appendTo(".p");
+
+      console.log("hello");
+        $("button").click(function() {
+        // data path
+            $.ajax({url: "q16prac.txt",type:'GET',success:function(result) {
+                setTimeout(function(){
+                   $('#div1').text(result);
+                },1000);
+
+        // get Result
+                //$("#div1").html(result);
+            },error:function(){
+
+            }});
+            console.log("outside ajax");
+
+        });
+    });
+
+
+</script>

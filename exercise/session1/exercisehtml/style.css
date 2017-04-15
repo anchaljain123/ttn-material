@@ -1,0 +1,29 @@
+body {
+	background:white;
+}
+.divcls{
+	
+	color: #00001;
+	border-style:solid;
+	box-sizing:border-box;
+	padding: 10px 20px 30px 40px ;
+	margin: 20px;
+	display: inline-block;
+	background: url("index.jpeg") center center repeat-x;
+
+}
+.cls{
+	background:rgba(55,100,155,0.5);
+	display:inline-block;	
+	
+}
+.float-right{
+	float: right;
+}
+.clear-left{
+	clear:left;
+}
+.clss
+{
+	clear: both;
+}

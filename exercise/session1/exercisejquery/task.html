@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.js">
+		
+	</script>
+</head>
+<body>
+
+
+	<script>
+
+   $(document).ready(function(){
+
+ //DESIGNING FORM 
+ 		
+ 		var formbox=$('<div>');
+   		formbox.attr('id','div1');
+   		formbox.css({'padding': '5px', 'margin': '20px','border':'2px solid grey'});
+   		
+   		
+   		$('body').html(formbox);
+
+   		var textbox1=$('<input>');
+   		textbox1.attr({'id':'t1','value':'Enter Name ' });
+   		textbox1.css('margin','10px')
+   		formbox.html(textbox1);
+
+   		formbox.append('<input type="text" value="Enter Emailid " id="t2" required>');
+
+   		var Addbutton=$('<button>');
+   		Addbutton.attr('id','b1');
+   		Addbutton.text('add');
+   		formbox.append(Addbutton);
+
+//ADD ELEMENT ON CLICK
+
+ $('#b1').bind("click",function(){
+
+
+   		var addbox=$('<div>');
+   		addbox.attr('id','div2');
+   		addbox.css({'padding': '5px', 'margin': '20px','border':'2px solid grey'});
+
+   		$('body').append(addbox);
+
+   		var value1=$('<p>');
+   		value1.text($('#t1').val());
+   		
+   		addbox.append(value1);
+
+   		var value2=$('<p>');
+   		value2.text($('#t2').val());
+
+   		addbox.append(value2);
+
+   		var Removebutton=$('<button>');
+   		Removebutton.attr('id','b2');
+   		Removebutton.text('Remove');
+   		addbox.append(Removebutton);
+
+//REMOVE ELEMENT ON CLICK
+
+   		$('#b2').click(function(){
+
+ 		 $('#div2').remove();
+
+   		});
+
+   		});
+/*
+       $("button").click(function(){
+            $("ol").append("<li>list item <a href='javascript:void(0);' class='remove'>×</a></li>"); 
+        });
+        $(document).on("click", "a.remove" , function() {
+            $(this).parent().remove();
+        });
+*/
+
+
+
+					});
+
+ 
+
+
+	
+
+
+
+
+
+</script>
+
+
+</body>
+</html>

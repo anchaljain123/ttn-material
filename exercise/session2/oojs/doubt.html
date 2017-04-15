@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+
+
+	setTimeout(function(cb) {
+
+		cb()
+
+	}(function(){
+			console.log("calling cb")
+	}),3000);
+
+
+//***********callback eg ***********
+function _read(cb){
+	//setTimeout(function(){cb()},3000); //it willnow call ur fn
+
+	setTimeout(cb,3000); // it will execute the param of settimeout fn
+	cb();
+}
+
+(function readfromfile(){
+
+	console.log("start");
+
+	_read(function(){console.log('read complete');} );
+
+	console.log("end");
+
+})();
+
+//*****************closure**************
+function a(){
+
+	var ctr=0;
+	function b(){
+		console.log(ctr);
+	}
+
+ctr++;
+return b;
+
+}
+
+var p= a();
+p();
+
+
+/*
+
+var a={ add:{id:2} ,sub:{sid:3 ,eid:8 } };
+for(k in a){
+ console.log(a[k])
+var t=a[k];
+for(var i in t){
+console.log(t[i])}
+
+
+}
+
+*/
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>

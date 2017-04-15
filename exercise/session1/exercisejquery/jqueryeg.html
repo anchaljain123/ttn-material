@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.js">
+
+	</script>
+</head>
+<body>
+
+<p> hi i am a newer </p>
+<div id="div1"> to the new
+<h1> anchal </h1>
+<p> jain</p>
+<h2> ttn </h2>
+<h1> noida </h1>
+
+<input type="text" id="test">
+
+<span>Nice to meet you!</span>
+
+</div>
+
+NAME : <input type="text"  value='abg'>
+<input type="button" value="click">
+
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+	alert("hi");
+	function hello(){
+		console.log("hello")
+	}
+});
+
+$(function(){
+		$("#div1:first").css('background','red');
+	});
+
+$(window).on('load',function(){
+		alert("welcome");
+	});
+
+$(function(){
+
+	console.log($("[type='text']").val());
+});
+
+
+$(document).ready(function(){
+    $("p").on("click", function(){
+        alert("The paragraph was clicked.");
+    });
+});
+
+$(document).ready(function(){
+    $("#test").focus(function(){
+        $('span').css("display", "inline").fadeOut(2000);
+    });
+});
+
+
+ $(document).ready(function(){
+
+	  	var link=$("<a>");
+   		link.attr('href','https://www.google.co.in');
+   		link.text('google');
+   		$('a').css({
+   			'float':'right'});
+	});
+
+</script>
+
+<p> fhjkhgsjgl</p>
+
+</body>
+
+
+
+</html>

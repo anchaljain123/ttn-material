@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Change the color of element which class name end with "-new"</title>
+
+<style type="text/css">
+	
+.div1new{
+
+	color: orange;
+}
+
+.div2new{
+
+	font-size: 40px;
+}
+
+.div3{
+	background-color: blue;
+}
+
+</style>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.js"> </script>
+
+</head>
+<body> 
+<h2>q3Change the color of element which class name end with "-new"</h2>
+<div class="div1new">
+HELLO THIS IS THE FIRST DIV WITH DIV1NEW AS CLASS </div>
+<br>
+<div class="div2new">
+HELLO THIS IS THE SECOND DIV WITH DIV2NEW AS CLASS </div><br>
+
+<div class="div3">
+HELLO THIS IS THE THIRD DIV WITH DIV3 AS CLASS </div>
+
+<script>
+
+   $(document).ready(function(){
+ 
+	  $('[class$="new"]').css('background','green');
+  	
+
+   		
+	});
+
+</script>
+
+
+
+</body>
+</html>

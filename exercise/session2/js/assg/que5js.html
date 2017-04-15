@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>q5.</title>
+</head>
+<script type="text/javascript">
+
+console.log('This is Outside Callback function');
+	
+	function one(cb){//1st callback function
+
+		setTimeout(function(){//2nd callback function 
+
+			console.log('This is the inner function')
+				cb();
+							},1000)
+		
+	}
+
+
+one(function(){
+	console.log('This is the outer function ');
+});
+
+</script>
+
+<body>
+<h3> q5.Generate an exmple in which you should use callback indise a callback ?
+	check console </h3>
+</body>
+</html>

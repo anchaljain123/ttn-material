@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Get dropdown selected value on onchanage event and append in div container</title>
+
+
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.js"></script>
+<script type="text/javascript">
+
+
+		$(document).ready(function(){
+
+
+
+ 		$('#os').change(function(){
+
+			var Adddiv=$('<div>');
+
+			Adddiv.text('Display Selected Value  :   ');
+			Adddiv.css({'padding': '35px', 'margin': '20px','border':'5px solid blue','visibility':'hidden'});
+
+			$('body').append(Adddiv);
+
+		Adddiv.css('visibility','visible');
+ 		var result=this.value;
+   		Adddiv.append(result);
+
+
+
+   	});
+
+  	});
+
+</script>
+
+</head>
+<body>
+<h3>Get dropdown selected value on onchanage event and append in div container</h3>
+
+Select Operating System :
+<select id=os>
+  <option value="Linux">Linux</option>
+  <option value="Mac">Mac</option>
+  <option value="Window">Window</option>
+  <option value="Unix">Unix</option>
+</select>
+
+</body>
+</html>

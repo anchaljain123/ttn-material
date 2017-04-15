@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Click event not working on element which added dynamicly or via script, make it work using .on method</title>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.js"></script>
+<script type="text/javascript">
+       
+    
+		$(document).ready(function(){
+			
+ 		var clickbox=$('<button>');
+   		clickbox.attr('id','b1');
+   		clickbox.css({'padding': '5px', 'margin': '20px','border':'5px solid black'});
+   		clickbox.text('click me');
+   		
+   		$('body').append(clickbox);
+
+
+ 		clickbox.on("click",function(){
+	
+		var Addbutton=$('<input>');
+ 		Addbutton.attr({'value':'Click','type':'button','class':'test'});
+ 		//Addbutton.text('Click');
+ 		//Addbutton.attr('class','test');
+   		$('body').append(Addbutton);
+	
+		});
+
+		$('body').on('click','.test',function(){
+
+  			var Addbutton1=$('<input>');
+ 		Addbutton1.attr({'value':'Click','type':'button','class':'test'});
+   		$('body').append(Addbutton1);
+
+			});
+
+
+  	});
+
+</script>
+</head>
+<body>
+<h3>q8.Click event not working on element which added dynamically or via script, make it work using .on method</h3>
+</body>
+</html>
+
+

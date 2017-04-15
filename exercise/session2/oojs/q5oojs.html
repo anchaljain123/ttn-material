@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<h3>Create video player, and, display video related values, like time, duration,etc. </h3>
+
+
+
+		<video id="video1" width="320" height="240" controls>
+		  <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4"> </video>
+<div>  
+
+		<button onclick="playPause()">Play/Pause</button>
+		<button onclick="getCurTime()" type="button">Get current time position</button>
+		<button onclick="myFunction()" type="button">Get video length</button><br>
+ </div>
+
+</body>
+<script type="text/javascript">
+
+	var myVideo = document.getElementById("video1"); 
+
+function playPause() { 
+	if (myVideo.paused) 
+        myVideo.play(); 
+    else 
+        myVideo.pause(); 
+} 
+
+function getCurTime() { 
+    alert("current playback position  : " + myVideo.currentTime);
+} 
+
+ function myFunction() { 
+    alert(myVideo.duration);
+} 
+	
+</script>
+
+</html>

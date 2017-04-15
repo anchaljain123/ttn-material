@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+	<title>q10.Write a program to remove duplicate characters from String.</title>
+
+
+<script type="text/javascript">
+	
+
+  function removeDuplicates(input)
+  {
+    
+  var result="";
+  for(var i = 0; i < input.length; i++)
+  {
+
+      if(result.indexOf(input[i])==-1)
+            result+=input[i];
+  }
+ 
+ alert(" Resultant String : " + result);
+
+      
+  }
+
+</script>
+</head>
+<body>
+
+<h4>q10.Write a program to remove duplicate characters from String.</h4>
+Enter String  : <input type="text" placeholder="Your String" id="t1">
+<input type="button" name="" value="submit" onclick="removeDuplicates(document.getElementById('t1').value)">
+
+</body>
+</html>

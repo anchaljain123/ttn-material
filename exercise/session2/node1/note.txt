@@ -1,0 +1,7 @@
+hi this is file for counting words
+i am a newer
+this is a practice
+
+
+
+bye

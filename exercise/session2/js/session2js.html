@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculate simple interest
+S = (PA  * R * T )/100
+PA: should be number >100 < 100000
+T: Time / Year >=1 and <=5
+R: Rate of interest 4 to 12 %
+
+
+
+</title>
+
+
+	<script type="text/javascript">
+
+function calculatesi(){
+
+	var x=document.getElementById('t1').value;
+	var y=document.getElementById('t2').value;
+	var z=document.getElementById('t3').value;
+	var s;
+	var p= parseInt(x);
+	var t=parseInt(y);
+	var ri=parseInt(z);
+
+
+		try {
+
+					if(p<100 || p>100000) throw " amt is incorrect";
+					if(t<1 || t>5) throw " time is incorrect";
+					if(ri <4 || ri >12) throw " ri is incorrect";
+
+	                if( (p>100 && p<100000) && (t>=1 && t<=5) &&(ri>=4 && ri<=12) )
+                {
+                	s=(p*ri*t)/100;
+
+                	alert(" ANS : " + s);
+
+                }
+
+
+            }
+
+
+            catch(err) {
+               // document.getElementById("demo").innerHTML = err.message;
+               alert(err);
+                }
+
+
+
+
+
+}
+
+	</script>
+
+</head>
+<body>
+
+Enter PrincipalAmount <input type="text" id="t1" placeholder="Enter Amount">
+Enter Time <input type="text" id="t2" placeholder="Enter Year">
+Enter RateOfInterest <input type="text" id="t3" name="" placeholder="Enter R.I">
+<input type="button" name="" value="Calculate s.i" onclick="calculatesi()">
+
+</body>
+</html>

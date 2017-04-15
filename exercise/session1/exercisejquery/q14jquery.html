@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.js"></script>
+<script type="text/javascript">
+      
+      var highest = null;
+      var hi = 0;
+
+		$(document).ready(function(){
+			
+					
+					$(".panel").each(function(){
+					  var h = $(this).height();
+					  if(h > hi){
+					    hi = h;
+					    highest = $(this); 
+								}   
+
+									});	
+
+
+						$('#h2id').text(" maxium height of element :"+hi);//stores highest value
+
+						highest.css('border','4px solid green');
+
+
+     	});
+
+
+
+			  
+
+</script>
+	<title>Get the max height of elements using jquery each method</title>
+</head>
+<body>
+<h3>Get the max height of elements using jquery each method</h3>
+<div>
+    <div class="panel">
+      Line 1<br>
+      Line 2
+    </div>
+    <div class="panel">
+      Line 1<br>
+      Line 2<br>
+      Line 3<br>
+      Line 4
+    </div>
+    <div class="panel">
+      Line 1
+    </div>
+    <div class="panel">
+      Line 1<br>
+      Line 2
+    </div>
+</div>
+
+<h2 id="h2id"></h2>
+
+</body>
+</html>

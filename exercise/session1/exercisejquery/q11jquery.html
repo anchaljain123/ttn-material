@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>On clicking on "google" tag. It is taking us to google home page. Stop it from happening.</title>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.js"></script>
+<script type="text/javascript">
+       
+     
+		$(document).ready(function(){
+			
+		$(".anchrcls").click(function(event) {
+   		event.preventDefault();
+   		
+				});
+   		
+
+     	});
+
+</script>
+
+
+</head>
+<h3>On clicking on "google" tag. It is taking us to google home page. Stop it from happening</h3>
+
+<body>
+
+<a href="https://www.google.co.in" class="anchrcls">Google</a>
+</body>
+</html>

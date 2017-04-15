@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+
+							var a = 5;
+		function foo() {
+						console.log("inside foo",a);
+						if(true) var a=7;
+							}
+
+		foo();
+		console.log("outside foo()",a)
+
+					function two(a) {// a is a local var here //undefined id the output
+						console.log("two fn wd a as param ",a);
+					}
+two(2);
+	// 				function two() {//5 is  the output
+	// 	console.log("two fn",a);
+	// }
+	// two()
+
+
+		function f1(){
+			console.log("inside f1()",a);
+			if(true)
+			{
+				var a=10;
+
+				a=9;
+
+			}
+
+			console.log("inside f1() when if work",a);//9
+		}
+	console.log("outside f1()",a);//5
+
+		f1();
+
+function f(){
+		var n=42;
+		var say=function(){console.log(n);} // this will b declared when v call f() it will run whn v call s()
+			n++;
+		return say;//say() is return
+	}
+
+	var s=f();
+	var b=f;//saving state of f()
+	s();//43,only say() is executed
+
+	function buildList(list) {
+    var result = [];
+    for (var i = 0; i < list.length; i++) {
+        var item = 'item' + i;
+        result.push( function() {console.log(item + ' ' + list[i])} );
+    }
+    return result;
+}
+function testList() {
+    var fnlist = buildList([1,2,3]);
+    // Using j only to help prevent confusion -- could use i.
+    for (var j = 0; j < fnlist.length; j++) {
+        fnlist[j]();
+    }
+}
+
+testList() //logs "item2 undefined" 3 times
+
+ console.log('************');
+//////////wdt callbacks
+console.log('a');
+ setTimeout(function(){
+ 	console.log('b');
+ },1000);
+
+ console.log('bye');
+ console.log('************');
+
+/////////annoymous fn
+for (var i=0;i<3;i++){
+
+	setTimeout(function(i){
+
+		console.log(i);
+
+	}(i),1000);
+}
+ console.log('************');
+
+//////////////
+function traversearrary(){
+var i=0;
+key_arr=function(){return arr[i++]}
+return key_arr;
+}
+var callfn=traversearrary();
+
+function one(callfn){
+setTimeout(function(){
+var temp=callfn();
+if(callfn()!=undefined){
+console.log(temp);
+one(callfn);
+}
+},3000)
+}
+ console.log('************');
+/////callback
+	console.log('anchal');
+
+	function one(cb){
+		setTimeout(function(){
+
+			console.log('jain')
+				cb();
+							},1000)
+
+	};
+one(function(){
+	console.log('mean');
+});
+
+ console.log('*****asyc behaviour bcz of set timeout*******');
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>

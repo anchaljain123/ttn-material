@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+
+
+// 	var a=[1,2,3,4,5];
+// (function fn(i){
+//
+// 	if(i<5)
+//
+//
+// 	setTimeout(function(){ //if we will not use closure it can't preserve value of i so by the time settimeout is complete i will be out of index
+//
+// 	console.log(a[i]);
+//  	fn(i+1)
+//  			},3000);
+//
+// })(0);
+///or
+console.log("*****second way*****")
+var af=[11,12,13,14,15]
+for(i=0;i<5;i++)
+{
+	(function(i){
+		setTimeout(function(){
+			console.log(af[i])
+		},3000)
+	})(i)
+}
+
+
+</script>
+</head>
+<body>
+<h3>q2. Given an array, say [1,2,3,4,5]. Print each element of an array after 3 secs</h3>
+</body>
+</html>

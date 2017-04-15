@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.js"></script>
+<script type="text/javascript">
+       
+     
+		$('document').ready(function(){
+			
+		$("#div1").click(function(e) {
+			alert("hello");
+   		});
+
+   		$('#div1 li ').click(function(){
+   			$(this).parent().off();
+   		});
+   		
+
+     	});
+
+</script>
+
+<head>
+	<title>We have bind a click funtion to parent div but we want stop it from performing when user clicks on its child li.</title>
+</head>
+<body>
+<h3>We have bind a click funtion to parent div but we want stop it from performing when user clicks on its child li</h3>
+
+<div id="div1" style=" border :4px solid red ;background-color: grey">
+		
+			List of Cars : 
+
+			<li> Audi </li>
+			<li> BMW </li>
+			<li> RangeRover</li>
+	
+
+		<p> This is a paragraph tag </p>
+		<strong> we are performing a demo </strong>
+
+</div>
+
+
+</body>
+</html>

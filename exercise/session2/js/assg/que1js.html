@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>q1.instead using validation , use custom exception to handle all types of valid data
+Create a Registration form which have following fileds
+1. First Name (Only characters[a-z, A-Z] are allowed)
+2. Last Name (Only characters[a-z, A-Z] are allowed)
+3. Contact Number (Only digits [0-9], length should be 10)
+4. DOB (A valid date)
+All fields are mendatory, If user click on submit button and any field is wrong then should through an error as per type
+</title>
+
+
+<script type="text/javascript">
+
+function submitform(){
+
+	var fname=document.getElementById('t1').value;
+	var lname=document.getElementById('t2').value;
+	var phn=document.getElementById('t3').value;
+	var dob=document.getElementById('t4').value;
+	var dobRE=/^(0[1-9]|1[012])[- /.](0[1-9]|[12][0-9]|3[01])[- /.](19|20)\d\d+$/;
+	var fnameRE  =  new RegExp("[a-zA-Z]");
+	var lnameRE  =  new RegExp("[a-zA-Z]");
+	var contactRE =new RegExp("[0-9]{10}");
+	var f=0;
+		try {
+					if(fname=='' || lname=='' || phn=='' || dob=='' ) throw " All fields are mandatory ";
+
+					if(!(fnameRE.test(fname)))
+						throw " Invalid input for FirstName";
+					else
+						f=1;
+					if(!(lnameRE.test(lname)))
+					 throw " Invalid input for LasttName";
+					else
+						f=1;
+
+					if(!(contactRE.test(phn))) 
+						throw " Invalid input for Contact";
+					else
+						f=1;
+
+					if(!(dobRE.test(dob)))  
+						throw " Invalid Date Entered ";
+					else 
+						f=1;
+
+
+					if(f==1)
+						alert(" Response has been submitted ");
+
+			  }
+
+	      catch(err)
+	      {
+	      	document.write(err);
+	      }
+}
+
+</script>
+</head>
+<body>
+<form>
+<h5>q1.instead using validation , use custom exception to handle all types of valid data
+Create a Registration form which have following fileds
+1. First Name (Only characters[a-z, A-Z] are allowed)
+2. Last Name (Only characters[a-z, A-Z] are allowed)
+3. Contact Number (Only digits [0-9], length should be 10)
+4. DOB (A valid date)
+All fields are mendatory, If user click on submit button and any field is wrong then should through an error as per type</h5>
+<h3 > Registration Form </h3>
+
+Enter FirstName :  <input type="text" id="t1" placeholder=" Your FirstName"> <br> <br>
+Enter LastName : <input type="text" id="t2" placeholder="Your LastName"> <br><br>
+Enter Contact :  <input type="text" id="t3" name="" placeholder=" Your Contact"><br><br>
+Enter D.O.B :  <input type="text" id="t4" name="" placeholder=" Your DOB"><br><br>
+<input type="button" name="" value="Submit" onclick="submitform()">
+
+</form>
+
+</body>
+</html>

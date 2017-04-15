@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Change the font size of ".target" which has parent element with id name "#main"</title>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.js"></script>
+	<style type="text/css">
+		.target{
+			color:red;
+			
+		}
+	</style>
+
+	<script type="text/javascript">
+		
+		$(document).ready(function(){
+ 
+	  $('#main').children().css('font-size','40px');
+  	
+
+   		
+	});
+
+
+	</script>
+
+</head>
+<body>
+<h3>q5.Change the font size of ".target" which has parent element with id name "#main"</h3>3
+<div id="main">
+		<div class="target">
+			we will increase the font size of text <span> THIS IS A DEMO </span>
+		</div>
+
+		
+</div>
+
+
+</body>
+</html>

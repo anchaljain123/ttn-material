@@ -1,0 +1,32 @@
+
+export function getName(){
+  return this.name;
+}
+
+export default let a=10;
+
+export function chckPolygon(param){
+
+let len=param.length;
+for(i in param)
+let[]=param[i]
+
+if(param>=2)
+{
+          if(l==b)
+        {
+            console.log("its a square");
+        }
+
+        else
+        {
+          console.log(" its not a square ")
+        }
+}
+
+else
+{
+      console.log( "its a circle ");
+}
+
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.js"></script>
+<script type="text/javascript">
+       
+     
+		$(document).ready(function(){
+			
+		
+ 		$('.main-menu').hover(function(){
+ 	
+  			$(this).find('.sub-menu').slideDown();
+
+   						});
+
+ 		$('.main-menu').mouseleave(function(){
+ 	
+  			$(this).find('.sub-menu').slideUp();
+
+   						});
+
+  	});
+  	</script>
+<head>
+	<title>Create a dropdown menu using hover method in jquery</title>
+</head>
+<body>
+<H3>Create a dropdown menu using hover method in jquery</H3>
+<ul>
+<li class="main-menu">
+  ONZE WAARDEN
+  <ul class="sub-menu" style="display: none;">
+    <li><a href="#">FAQ</a></li>
+    <li><a href="#">ITC</a></li>
+    <li><a href="#">CLUB</a></li>
+    <li><a href="#">CULTUUR</a></li>
+    <li><a href="#">ROBITICA</a></li>
+  </ul>
+</li>
+</ul>
+
+</body>
+</html>

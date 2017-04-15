@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		
+
+function copyObject(obj) {
+var temp={};
+for (var key in obj) { // it holds keys from obj
+
+if(obj.hasOwnProperty(key)){ //to copy only its own values 
+        temp[key] = (obj[key]);
+
+}
+}
+    return temp;
+}
+
+var bob = {
+    name: "Bob",
+    age: 32
+};
+
+
+console.log(bob);
+var bill = copyObject(bob);
+console.log(bill);
+
+
+</script>
+</head>
+<body>
+<h3>q3.Create a function which returns the copy of input object (check console ).</h3>
+</body>
+</html>

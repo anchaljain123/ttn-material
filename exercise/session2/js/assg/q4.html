@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+    <h3>q4.Get data from google weather api using ajax hit and render the resultent data in table or list form</h3>
+        <div></div>
+
+        <button type="button">Click Me to get Data</button>
+        <p></p>    
+    </body>
+
+<script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+<script>
+    $(document).ready(function(){
+        console.log("hello");
+        $("button").click(function() {
+
+                    $.ajax({ 
+                        type: 'GET', 
+                        url: 'https://maps.googleapis.com/maps/api/geocode/json?latlng=40.714224,-73.961452',
+                        dataType: 'json',
+                        success: function (data) { 
+                            $('body').append('<ul>');
+                                    function traverse_it(obj){
+                                            for(var prop in obj){
+                                                if(typeof obj[prop]=='object'){
+                                                    traverse_it(obj[prop]);
+                                                }else{
+                                                    $('body').append('<li>'+prop+' :'+obj[prop]+'</li>');
+                                                }
+                                            }
+                                        }$('body').append('</ul>');
+                                        traverse_it(data);                                
+                        }
+                    });
+
+        });
+
+
+
+
+    });
+    
+
+</script>
+</html>

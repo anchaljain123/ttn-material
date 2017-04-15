@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head> </head> 
+<body>
+	 
+	   <h1> To Check Palindrome</h1>
+
+ 	Enter the series : <input type="text" value ="a" id="text1"/>
+
+	<button onclick="myFunction()">Click it</button>
+ 
+
+      <script>  
+
+    function myFunction(){  
+    	
+    	var palindrom=document.getElementById('text1').value;
+    	
+    	var len=palindrom.length;
+    	var flag=0;
+
+      for (var i = 0; i < len/2; i++) 
+
+    {
+        if( palindrom[i] == palindrom[len - 1 - i] )
+        
+           flag=1;
+        else
+        {
+        	flag=0;
+            break;
+        }
+    }
+    
+      if(flag==1)
+      	 document.write('the word is palindrome!');
+      	else
+      	document.write('the word is not palindrome!');	
+    }  
+    </script>  
+    
+	
+
+
+</body>
+</html>

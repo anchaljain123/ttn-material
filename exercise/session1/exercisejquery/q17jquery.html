@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <style type="text/css">
+          input{
+                   width:50px;
+                   background: red;
+                   border: red;
+                   color: white;
+                   font-size:14px;
+                   font-weight: bolder;
+               }
+      </style>
+    <body>
+      <input type="button" value="click" id="btn">
+
+<script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+<script>
+  $(document).ready(function(){
+
+      $("#btn").click(function() {
+         $.ajax({ url:"localhost:3000/api",type:'GET',success:function(result) {
+
+          } ,error:function(){
+
+          }});
+
+
+
+      });
+  });
+
+
+</script>
+
+
+    </body>
+</html>

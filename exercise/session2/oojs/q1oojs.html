@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+	
+function Person(){
+	this.name="this is person class";
+}
+
+function Employee(){
+	this.value="this is employee class";
+}
+
+function Developer(){
+	this.coding=" this is developer class ";
+}
+
+Employee.prototype=new Person();
+Employee.prototype.constructor=Employee;
+
+Developer.prototype=new Employee();
+Developer.prototype.constructor=Developer;
+
+var objdev=new Developer();
+console.log(objdev);
+
+</script>
+
+
+
+
+</body>
+<h3>q1. Create a hierarchy of person, employee and developers.</h3>
+</html>

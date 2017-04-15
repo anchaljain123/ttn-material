@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>q9.Return highest occurred character in a String</title>
+</head>
+<body>
+
+<script type="text/javascript">
+
+function frequency(str) {
+
+  var counter = new Array(256);
+  var len=str.length;
+  //var counter[256]={0};
+
+for (var i = 0;  i <=256; i ++) { //assigning 0 value to array
+  counter[i] = 0;
+}
+
+for (var i = 0;  i < len; i ++) {
+
+var temp=str[i].charCodeAt(0);
+counter[temp] = counter[temp] + 1;
+
+}
+var biggest = -1, number;
+for (var key in counter) {
+  if (counter[key] > biggest) {
+      biggest = counter[key];
+      number = key;
+  }
+}
+
+
+alert(" Highest occurred character in a string :   " + String.fromCharCode(number));
+
+}
+
+</script>
+</head>
+<body>
+<h4>q9.Return highest occurred character in a String</h4>
+
+Enter String  : <input type="text" placeholder="Your String" id="t1">
+<input type="button" name="" value="submit" onclick="frequency(document.getElementById('t1').value)">
+
+
+</body>
+</html>

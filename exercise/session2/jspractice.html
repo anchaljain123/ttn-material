@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+console.log("**********************")
+	function f(){
+		var n=42;
+		var say=function(){console.log("value of f()"+n);}
+			n++;
+		return say;//say() is return
+	}
+
+	var s=f();
+	var b=f;//saving state of f()
+	s();//43,only say() is executed
+	s();//again n again same state is called
+console.log("**********************")
+function add() {
+var counter = 0;
+function plus() {counter += 1;}
+plus();
+return counter;
+}
+	var a=add(); //1 is returned
+	console.log("value of add() "+a)
+	var a1=add(); //again calling nd returning ctr=1
+	console.log("add() value "+a1)
+
+console.log("**********************")
+var add1 = (function () {
+			var counter = 0;
+			return function () {return counter += 1;}
+			})();
+console.log("add1() value "+add1());
+console.log("value of add1()"+add1());
+
+console.log("**********************")
+var x="global"
+function outermost(){
+this.x = 'outermost';
+function intermediate(){
+var y = 'intermediate y';
+this.y='this intermediate y'
+function innermost(){ // gets
+//var y='innermost y'
+var z = 'innermost z';
+console.log(x,y, z);
+}
+innermost();
+}
+var p=new intermediate();
+}
+var o =new outermost(); // prints
+
+console.log("**********************")
+function foo() {
+console.log("this.b1 :"+this.b1);
+console.log("hoisted a :"+a);
+var a = 20;
+this.b1=4;
+console.log("after hoisiting a: "+a);
+console.log("after hoisiting this.b1: "+this.b1);
+}
+var obj=new foo();
+console.log("!!! calling function(foo)!!!");
+foo();
+
+console.log("**********************");
+var name2 = 'Abhishek';
+function hello() {
+console.log('Hello', name2);
+}
+hello(); // Hello Abhishek
+// Redefining name
+name2 = 'Aniiiiiiiii';
+hello(); // Hello Anil
+
+console.log("**********************");
+function addNumber (num) {
+return function(input){
+console.log(input + num);
+}
+}
+var add10 = addNumber(10); // returns function which adds 10 to input number
+var add20 = addNumber(20); // returns function which adds 20 to input number
+add10(5); // 15
+add20(7); // 27
+console.log("**********************");
+
+var person = {
+name: 'Abhishek',
+print: function () {
+console.log('Name is: ', this.name); // this.name means person.name in this context
+}
+};
+var p = person.print;
+console.log("**p()*");
+
+p(); // won't print the name
+p = p.bind(person);
+console.log("**bind p()*");
+p(); // will print 'Abhishek'
+var x = {name: 'Anil', print: p};
+console.log("** assign in obj p()*");
+x.print();//Abhishek
+console.log("**********************");
+function Animal(){
+this.eats = true;
+}
+function Rabbit(){
+this.canRunFast = true;
+}
+Rabbit.prototype = new Animal();
+var rabbit = new Rabbit();
+console.log(rabbit.eats);
+console.log(rabbit.canRunFast);
+console.log("**********************");
+1?console.log("1"):alert("2")
+</script>
+</body>
+</html>

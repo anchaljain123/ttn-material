@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>q7. What’s the result of executing this code and why?
+
+function test() {
+console.log(a);
+console.log(fun());
+
+var a = 1;
+function fun() {
+return 2;
+}
+}
+
+test();</title>
+
+<script type="text/javascript">
+	
+
+function test() {
+
+console.log(a); //undefined
+console.log(fun()); //2
+
+var a = 1;
+function fun() {
+return 2;
+}
+}
+
+test();
+
+</script>
+</head>
+<body>
+<h4>q7. What’s the result of executing this code and why?
+
+function test() {
+console.log(a);
+console.log(fun());
+
+var a = 1;
+function fun() {
+return 2;
+}
+}
+
+test();</h4>
+<h3> RESULT : </h3>
+<p> VALUE a :'a' will have undefined value because of the hoists concept, declaration comes before execution of the variable but initialization of variable is absent hence we get undefined as a value</p>
+<p> VALUE fun() : fun() will be called in console.log statement and body will come before the execution of fun() and will return 2 as value on console .
+
+
+</body>
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+
+var links = [];
+for(var i=0; i<5; i++) {
+links.push({
+onclick: function() {
+console.log('link: ', i);
+}
+});
+}
+console.log(links)
+links[0].onclick();
+//links[1].onclick();
+
+console.log("***********************")
+
+var Animal = function(name) {
+this.name = name;
+}
+Animal.prototype.says = function (sound) {
+console.log(sound);
+};
+var lion = new Animal("Lion");
+lion.says("Grrrrrrrrrrrrr!!!");
+
+console.log("***********************");
+
+var arr=[1,2,3,4]
+console.log("!! using map !!");
+arr.map(function(i) {
+  console.log(i);
+});
+console.log("!! using foreach !!");
+arr.forEach(function(i) {
+  console.log(i);
+});
+console.log("!! using arrow function!!");
+arr.map((item)=> console.log(item))
+
+console.log("***********************");
+(function() {
+  return [
+    (() => console.log(this.x)).bind({ x: 'inner' })(),
+    (() => console.log(this.x))()
+  ]
+}).call({ x: 'outer' });
+
+console.log("*************doubt 1**********");
+(function(x, f = () => x) {
+  var x;
+  var y = x;
+  x = 2;
+	console.log(x,y)
+  return [x, y, f()];
+})(1)
+
+console.log("************doubt 2***********");
+let x, { x: y = 1 } = { x };
+y;
+console.log(x,y)
+
+ console.log("***********************");
+ let x1, { x1: y1 = 1 } = { x1 };
+
+ console.log(y1);
+
+console.log("***********************");
+var res=(function() {
+  let f = this ? class g { } : class h { };
+  return [
+    typeof f,
+    typeof h
+  ];
+})();
+console.log(res)
+console.log("***********************");
+console.log(typeof (new (class F extends (String, Array) { })).substring)
+/*console.log("***********************");
+['...'].length//1
+[...'...'].length//3
+[[...'...']].length//1
+[...[...'...']].length//3*/
+console.log("***********************");
+/*((...x, xs)=>x)(1,2,3) //restparam shld b d last in formalarg
+*/console.log("***********************");
+class F{
+    constructor(){
+        var a=10;
+    }
+}
+var o = new F();
+o.constructor === F//true
+console.log("***********************");
+/*let z=z+1;
+console.log(z);*///NaN //Another way to write o.m(x,y) is o[“m”](x,y).
+console.log("***********************");
+
+console.log("**********doubt 3*************");
+// let arr1 = [ ];
+//  for (let { xq = 2, y } of [{ xq: 1 }, 21, { y }]) {
+//  arr1.push(xq, y);//1undefined 21undefined 2y
+//  }
+//  console.log(arr1)
+console.log("***********doubt 4************");
+// var a=(function() {
+//  if (false) {
+//  let f = (g() => 1 );
+//  }
+//  return typeof f;
+//  })()
+//  console.log(a)
+console.log("***********************");
+var res1=(function(x){
+ delete x;
+ return x;
+ })(1);
+console.log("val after deletion ",res1);
+console.log("***********doubt 5************");
+ function f(){ return f; }
+ console.log(new f() instanceof f);
+  //console.log(f instanceof new f());
+console.log("***********************");
+(function(foo){
+ return [typeof foo.bar;
+ type of foo.foo.bar]
+ })({ foo: { bar: 1 } });
+console.log("***********************");
+function f() {
+  return [1, 2, 3];
+}
+
+var [a, , b] = f();
+console.log(a); // 1
+console.log(b); // 3
+
+console.log("***********************");
+var [a, ...b] = [1, 2, 3];
+console.log("***********************");
+//
+// //{a, b} = {a: 1, b: 2} is not valid stand-alone syntax, as the {a, b} on the left-hand side is considered a block and not an object literal.
+//
+// //However, ({a, b} = {a: 1, b: 2}) is valid, as is var {a, b} = {a: 1, b: 2}
+// console.log("***********************");
+// new String("a") == "a" and "a" == new String("a")are both true.
+// new String("a") == new String("a") is false.
+// var a = new String('foo');
+// a == 'foo'//true
+// //If one of the operands is Boolean, the Boolean operand is converted to 1 if it is true and +0 if it is false.
+// //expr1 && expr2	-Returns expr1 if it can be converted to false; otherwise, returns expr2.
+// //Logical OR-	Returns expr1 if it can be converted to true; otherwise, returns expr2.
+// //The comma operator (,) simply evaluates both of its operands and returns the value of the last operand
+// //The delete operator deletes an object, an object's property, or an element at a specified index in an array.delete operator returns true if the operation is possible; it returns false if the operation is not possible.
+// //If the delete operator succeeds, it sets the property or element to undefine.When you delete an array element, the array length is not affected. For example, if you delete a[3], a[4] is still a[4] and a[3] is undefined.
+// console.log("***********************");
+//
+// x = 42;
+// var y = 43;
+// myobj = new Number();
+// myobj.h = 4;    // create property h
+// delete x;       // returns true (can delete if declared implicitly)
+// delete y;       // returns false (cannot delete if declared with var)
+// delete Math.PI; // returns false (cannot delete predefined properties)
+// delete myobj.h; // returns true (can delete user-defined properties)
+// delete myobj;   // returns true (can delete if declared implicitly)
+// console.log("***********************");
+// typeof Date
+// "function"
+// console.log("***********************");
+// //The in operator returns true if the specified property is in the specified object. The syntax is.where propNameOrNumber is a string or numeric expression representing a property name or array index, and objectName is the name of an object.
+//
+// var trees = ['redwood', 'bay', 'cedar', 'oak', 'maple'];
+// 0 in trees;        // returns true
+// 'bay' in trees;    // returns false (you must specify the index number,
+//                    // not the value at that index)
+// 'length' in trees; // returns true (length is an Array property)
+
+console.log("***********************");
+
+console.log("***********************");
+
+
+</script>
+</body>
+</html>

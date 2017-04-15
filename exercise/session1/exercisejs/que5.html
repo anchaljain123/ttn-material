@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Question 5</title>
+	<script >
+		var Employee = [
+    						{ Name: 'ram', age: 22, salary: 500 ,DOB:'12/03/1995'},
+   							{ Name: 'Shyam', age: 18, salary: 10000 ,DOB:' 2/02/1999'},
+    						{ Name: 'raj', age: 37, salary: 5000 ,DOB:'25/07/1980'},
+    						{ Name: 'jai', age: 25, salary: 9000 ,DOB:'25/07/1992'},
+						];
+						document.write( "<b>all employees:<br> </b>");
+						for(var i in Employee)
+						{
+							document.write("Name:"+Employee[i].Name+" age:"+Employee[i].age+" salary:"+Employee[i].salary+" DOB:"+Employee[i].DOB+"<br>");
+						}
+
+
+						/////////////part b
+						document.write( "<br> <b>all employees with salary greater than 5000 : </b><br>");
+						for(var i in Employee)
+						{
+							if(Employee[i].salary>=5000)
+								document.write(" "+Employee[i].Name+"<br>");
+						}
+						
+
+						/////////////part c
+						document.write("<br><b>employee on the basis of their age:</b>");
+						var agelessthan20=[];
+						var age21_30=[];
+						var age30above=[];
+						for(var i in Employee){
+							if(Employee[i].age<=20)
+								 agelessthan20.push(Employee[i].Name);
+							else if(Employee[i].age<=30)
+								 age21_30.push(Employee[i].Name);
+							else
+								 age30above.push(Employee[i].Name);
+						}
+						document.write("<br>age less than 20: "+agelessthan20);
+						document.write("<br>age between 20 and 30: "+age21_30);
+						document.write("<br>age above 30: "+age30above+"<br>");
+
+						
+						/////////////part d
+						document.write("<br><b>employees with salary less than 1000 and age greater than 20. Then give them an increment 5 times their salary.</b>");
+						var salaryhike=[];
+						for(var i in Employee){
+							if(Employee[i].salary<=1000&&Employee[i].age>20)
+							{
+								document.write("<br>");
+								var old=Employee[i].salary;
+								Employee[i].salary=Employee[i].salary*5;
+								document.write("name: "+Employee[i].Name+" old salary: "+old+" new salary: "+Employee[i].salary);
+							}
+						}
+
+
+
+
+
+	</script>
+</head>
+<body>
+<h3>
+
+
+</h3>
+
+</body>
+</html>
